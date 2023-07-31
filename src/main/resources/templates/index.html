@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stock Market</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+ 
+ <link rel="stylesheet" type="text/css" href="./index.css" />
+ 
+ 
+ 
+ <style type="text/css">
+ /* ------------------------ General Start ------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+.fill-space {
+  height: 200px;
+}
+
+/* ------------------------ General End ------------------------*/
+
+/* ------------------------ Navigaiton Start ------------------------*/
+.navbar {
+  background-color: #252e3b;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #00adb5;
+  border-color: #00adb5;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.bottom-bar {
+  background-color: #1d293a;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-top: -20px;
+  margin-bottom: 0;
+  height: 30v
+
+}
+
+/* ------------------------ Navigaiton End ------------------------*/
+
+/* ------------------------  Main Heading Starts  ------------------------*/
+
+.background-image-blur {
+  background-image: url(https://thumbs.dreamstime.com/b/document-management-system-concept-businessman-document-management-system-concept-businessman-city-background-170123841.jpg);
+  background-size: cover;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  height: 75vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.display-4 {
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+
+/* .jumbotron::before {
+    content:url("https://thumbs.dreamstime.com/b/document-management-system-concept-businessman-document-management-system-concept-businessman-city-background-170123841.jpg");
+    width: 100%;
+} */
+
+/* ------------------------  Main Heading Ends  ------------------------*/
+
+/* ------------------------  Footer Starts ------------------------*/
+
+.footer-container {
+  margin-top: 50px;
+  color: #ffffff;
+}</style>
+
+
+</head>
+
+<body>
+  <div class="main-contianer">
+    <div class="navigation">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Stock Market App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/teams">Teams</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary mr-3" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-secondary" href="/register">Sign Up</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="jumbotron">
+      <div class="background-image-blur"></div>
+      <h1 class="display-4">Welcome to Stock Market App</h1>
+    </div>
+
+    <div class="bottom-bar">
+      <div class="footer-container">
+        <div class="row">
+          <div class="col-md-4">
+            <h3 class="test">Top Stocks</h3>
+            <p>Tesla</p>
+            <p>Apple</p>
+            <p>Amazon</p>
+          </div>
+          <div class="col-md-4">
+            <h3>Best Stocks</h3>
+            <p>Tesla</p>
+            <p>Apple</p>
+            <p>Amazon</p>
+          </div>
+          <div class="col-md-4">
+            <h3>Hot Stocks</h3>
+            <p>Tesla</p>
+            <p>Apple</p>
+            <p>Amazon</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>

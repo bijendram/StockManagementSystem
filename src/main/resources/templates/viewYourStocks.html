@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Your Stocks</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <style>
+        /* General CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(207, 209, 212);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: lightblue;
+            color: black;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background-color: whitesmoke;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: whitesmoke;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: whitesmoke;
+        }
+
+        /* Navigation CSS */
+        .navbar {
+            background-color: #252e3b;
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .nav-link.active {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navigation">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">Stock Market Dashboard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/profile(email=${user.email})}">Profile</a>
+                    </li>
+                
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/viewAllStocks(email=${user.email})}">View All Stocks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">View Your Stocks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/buyStock(email=${user.email})}">Buy Stock</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/sellStock(email=${user.email})}">Sell Stock</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-secondary" href="/">Log out</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container mt-5">
+        <h1><span th:text="${user.firstName}"> </span> Stocks</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name of Stock</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <!-- Add more table headers for other stock properties as needed -->
+                </tr>
+            </thead>
+            <tbody>
+               <tr th:each="stock : ${allStocks}">
+                    <td th:text="${stock.stock}"></td>
+                    <td th:text="${stock.price}"></td>
+                    <td th:text="${stock.qty}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
